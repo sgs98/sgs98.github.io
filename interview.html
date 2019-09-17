@@ -866,17 +866,17 @@ synchronized 锁升级原理：在锁对象的对象头里面有一个 threadid 
 
 尽量减少同步的代码块。
 
-<h4>51.ThreadLocal 是什么？有哪些使用场景？
+<h4>51.ThreadLocal 是什么？有哪些使用场景？</h4>
 
 ThreadLocal 为每个使用该变量的线程提供独立的变量副本，所以每一个线程都可以独立地改变自己的副本，而不会影响其它线程所对应的副本。
 
 ThreadLocal 的经典使用场景是数据库连接和 session 管理等。
 
-<h4>52.说一下 synchronized 底层实现原理？
+<h4>52.说一下 synchronized 底层实现原理？</h4>
 
 synchronized 是由一对 monitorenter/monitorexit 指令实现的，monitor 对象是同步的基本实现单元。在 Java 6 之前，monitor 的实现完全是依靠操作系统内部的互斥锁，因为需要进行用户态到内核态的切换，所以同步操作是一个无差别的重量级操作，性能也很低。但在 Java 6 的时候，Java 虚拟机 对此进行了大刀阔斧地改进，提供了三种不同的 monitor 实现，也就是常说的三种不同的锁：偏向锁（Biased Locking）、轻量级锁和重量级锁，大大改进了其性能。
 
-<h4>53.synchronized 和 volatile 的区别是什么？
+<h4>53.synchronized 和 volatile 的区别是什么？</h4>
 
 volatile 是变量修饰符；synchronized 是修饰类、方法、代码段。
 
@@ -884,7 +884,7 @@ volatile 仅能实现变量的修改可见性，不能保证原子性；而 sync
 
 volatile 不会造成线程的阻塞；synchronized 可能会造成线程的阻塞。
 
-<h4>54.synchronized 和 Lock 有什么区别？
+<h4>54.synchronized 和 Lock 有什么区别？</h4>
 
 synchronized 可以给类、方法、代码块加锁；而 lock 只能给代码块加锁。
 
@@ -892,7 +892,7 @@ synchronized 不需要手动获取锁和释放锁，使用简单，发生异常�
 
 通过 Lock 可以知道有没有成功获取锁，而 synchronized 却无法办到。
 
-<h4>55.synchronized 和 ReentrantLock 区别是什么？
+<h4>55.synchronized 和 ReentrantLock 区别是什么？</h4>
 
 synchronized 早期的实现比较低效，对比 ReentrantLock，大多数场景性能都相差较大，但是在 Java 6 中对 synchronized 进行了非常多的改进。
 
@@ -906,7 +906,7 @@ ReentrantLock 只适用于代码块锁，而 synchronized 可用于修饰方法�
 
 ReentrantLock 标记的变量不会被编译器优化；synchronized 标记的变量可以被编译器优化。
 
-56.说一下 atomic 的原理？
+<h4>56.说一下 atomic 的原理？</h4>
 
 atomic 主要利用 CAS (Compare And Swap) 和 volatile 和 native 方法来保证原子操作，从而避免 synchronized 的高开销，执行效率大为提升。
 
